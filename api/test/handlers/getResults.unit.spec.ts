@@ -25,7 +25,7 @@ describe('get results handler', () => {
 
     const resultServiceMock: IResultService = {
       addResult: undefined,
-      getRanked: jest.fn(async () => data),
+      getRanked: jest.fn((async () => data)),
     }
     const response = await _handler(
       fakeApiGatewayEventV2({

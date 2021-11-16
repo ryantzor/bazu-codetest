@@ -9,7 +9,6 @@ describe('resultService', () => {
 
   it('should get all results in ranked order', async () => {
     const results = await new ResultService().getRanked()
-    
     assertResultsAreRanked(results)
   })
 })

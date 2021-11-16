@@ -1,10 +1,15 @@
-import * as mysql from 'mysql2'
+import * as mysql from 'mysql2/promise'
+// create the connection
 
 let _connection: mysql.Connection
 
-export default () => {
+export const endConnection = () => {
+  if (_connection) _connection.end()
+}
+
+export const getConnection = async () => {
   if (!_connection) {
-    _connection = mysql.createConnection({
+    _connection = await mysql.createConnection({
       database: process.env.MYSQL_DB,
       host: process.env.MYSQL_HOST,
       namedPlaceholders: true,

@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "mysql2": "^2.2.5",
+    "mysql2": "^2.3.3",
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
