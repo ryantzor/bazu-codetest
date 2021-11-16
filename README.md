@@ -11,28 +11,28 @@ Unbeknownst to them, however, it's vaporware! The API and UI are both leveraging
 ## setup
 
 ### API
-- [ ] Copy the `api/.env.example` file to `api/.env`, which has environment-specific configuration and will be ignored by git.
-- [ ] Install the API packages and run the unit tests with:
+- [X] Copy the `api/.env.example` file to `api/.env`, which has environment-specific configuration and will be ignored by git.
+- [X] Install the API packages and run the unit tests with:
 ```
 cd api/
 npm i
 npm test
 ```
-- [ ] Start the API with `npm start` and verify it is running at http://localhost:5000/results
-- [ ] Run the API integration tests in a separate terminal with `npm run test:int`
-- [ ] Note that the API integration tests fail because the API is using "ephemeral" state to store the results, which are randomly regenerated on every request.
+- [X] Start the API with `npm start` and verify it is running at http://localhost:5000/results
+- [X] Run the API integration tests in a separate terminal with `npm run test:int`
+- [X] Note that the API integration tests fail because the API is using "ephemeral" state to store the results, which are randomly regenerated on every request.
 
 ### UI
-- [ ] Copy the `ui/.env.example` file to `ui/.env`, which has environment-specific configuration and will be ignored by git.
-- [ ] Install the UI packages and watch the unit tests with:
+- [X] Copy the `ui/.env.example` file to `ui/.env`, which has environment-specific configuration and will be ignored by git.
+- [X] Install the UI packages and watch the unit tests with:
 ```
 cd ui/
 npm i
 npm test
 ```
-- [ ] Press `'a'` to run all unit tests in the terminal.
-- [ ] Start the UI in a separate terminal with `npm start` and verify it is running at http://localhost:5001
-- [ ] Run the UI acceptance tests in a separate terminal with `npm run test:at`, which opens the [Cypress.io Test Runner](https://docs.cypress.io/guides/core-concepts/test-runner#Overview)
+- [X] Press `'a'` to run all unit tests in the terminal.
+- [X] Start the UI in a separate terminal with `npm start` and verify it is running at http://localhost:5001
+- [X] Run the UI acceptance tests in a separate terminal with `npm run test:at`, which opens the [Cypress.io Test Runner](https://docs.cypress.io/guides/core-concepts/test-runner#Overview)
 
 ## tasks
 
