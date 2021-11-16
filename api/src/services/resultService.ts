@@ -27,21 +27,11 @@ export interface IResultService {
   getRanked(): Promise<RankedResult[]>
 }
 
-const UNRANKED_RESULTS = Array.from(
-  new Array(
-    Math.round(Math.random() * 10) + 1
-  )
-    .keys()
-).map<UnrankedResult>((_, index) => ({
-  bib: `B${index + 100}`,
-  name: `Person #${index}`,
-  time: Math.round(Math.random() * 1000000),
-}))
-
 export default class ResultService implements IResultService {
 
   async addResult(result: UnrankedResult): Promise<void> {
-    UNRANKED_RESULTS.push(result)
+    const connection = await getConnection()
+    await connection.query(`insert into results (bib, name, time) values (?, ?, ?)`, [result.bib, result.name, result.time])
   }
 
   async getRanked(): Promise<RankedResult[]> {

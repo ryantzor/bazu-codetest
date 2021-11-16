@@ -6,7 +6,7 @@ import * as iconv from 'iconv-lite';
 iconv.encodingExists('foo');
 
 // import { getConnection } from "@lib/mysql"
-import { RankedResult } from "@services/resultService"
+import { RankedResult, UnrankedResult } from "@services/resultService"
 
 let connection: Connection;
 
@@ -16,7 +16,7 @@ describe('post result endpoint', () => {
   })
   it('should add a result', async () => {
 
-    const result: any = {
+    const result: UnrankedResult = {
       bib: `B${Math.round(Math.random() * 100)}`,
       name: `Thing ${Math.round(Math.random() * 10)}`,
       time: Math.round(Math.random() * 1000)
@@ -30,6 +30,8 @@ describe('post result endpoint', () => {
         body: JSON.stringify(result),
         method: 'POST'
       })
+    const res = await postResponse.text()
+    console.log(res)
     expect(postResponse.status).toEqual(201)
 
     const getResponse = await fetch(API_URL)
